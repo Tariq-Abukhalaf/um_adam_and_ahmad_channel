@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🔴 قناة ام ادم واحمد</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-title">
+          <div class="live"><span class="live-dot"></span> 🔴 LIVE</div>
+          قناة ام ادم واحمد
+        </div>
+        <div class="brand-tagline">لحظات ممتعة وتحديات جديدة - صوّت لبلدك المفضل!</div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn">ابدأ المعركة وهوبا هوبا عاش</button>
+        <button id="resetBtn" class="btn secondary" disabled>إعادة التعيين</button>
+      </div>
+    </div>
+
+    <div id="grid" class="grid" aria-live="polite"></div>
+
+    <div class="stats">
+      <div class="panel">
+        <h2>إحصاءات مباشرة</h2>
+        <h4>إجمالي التصويت: <span id="totalVotesDisplay">0</span> صوت</h4>
+        <div class="chart-container">
+          <canvas id="liveBar"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="resetModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resetModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="resetModalTitle">
+            ⚠️ تأكيد إعادة التعيين
+          </h3>
+          <button type="button" class="modal-close" id="resetModalClose" aria-label="إغلاق">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>هل أنت متأكد من أنك تريد إعادة تعيين جميع الأصوات؟</p>
+          <p><strong>تحذير:</strong> ستفقد جميع البيانات الحالية ولن يمكن التراجع عن هذا الإجراء.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn secondary" id="resetModalCancel">إلغاء</button>
+          <button type="button" class="btn danger" id="resetModalConfirm">نعم، إعادة التعيين</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="luckyModal" class="modal lucky-modal" role="dialog" aria-modal="true" aria-labelledby="luckyModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-content lucky-content">
+        <div class="lucky-animation">
+          <div class="lucky-stars">✨✨✨</div>
+          <div class="lucky-icon" id="luckyIcon">🏆</div>
+          <div class="lucky-stars">✨✨✨</div>
+        </div>
+        <div class="modal-header lucky-header">
+          <h3 class="modal-title lucky-title" id="luckyModalTitle">
+           مبروك! فوز عظيم!
+          </h3>
+        </div>
+        <div class="modal-body lucky-body">
+          <p class="lucky-message" id="luckyMessage">لقد فزت بدرع ال هوبا هوبا عاش</p>
+          <p class="lucky-multiplier" id="luckyMultiplier">حصلت على x5 أصوات!</p>
+        </div>
+        <div class="modal-footer lucky-footer">
+          <button type="button" class="btn success" id="luckyModalClose">رائع!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="persistentIndicator" class="persistent-indicator">
+    💾 تم حفظ التصويت!
+  </div>
+
+  <footer>
+    قناة ام ادم واحمد
+    <br>
+    <span style="font-size: 0.9rem; opacity: 0.7;">
+      <a href="https://www.youtube.com/@%D8%A7%D9%85_%D8%A7%D8%AF%D9%85_%D8%A7%D8%AD%D9%85%D8%AF" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+        youtube.com/@ام-ادم-واحمد
+      </a> • اشتركوا للمزيد من التحديات الممتعة
+    </span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
